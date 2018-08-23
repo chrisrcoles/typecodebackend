@@ -21,5 +21,5 @@ post_resource = PostResource()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(post_resource.urls)),
+    path('api/v1/', include(post_resource.urls)),
 ]

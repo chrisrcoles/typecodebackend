@@ -25,7 +25,10 @@ SECRET_KEY = '9sx4be$cz+=wp(!bufkrjw+rg60m379yenv3gb+lq$2=)^l$0n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.typecode-api.com',
+    'localhost'
+]
 
 
 # Application definition
@@ -38,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
-    'tastypie'
+    'tastypie',
 ]
 
 MIDDLEWARE = [
