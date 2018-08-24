@@ -21,7 +21,7 @@ from posts.views import get_or_create_posts, get_update_or_delete_post_by_id, ge
 urlpatterns = [
     path('', home),
     path('admin/', admin.site.urls),
-    path('api/v2/posts/', get_or_create_posts),
-    path('api/v2/posts/<int:post_id>/', get_update_or_delete_post_by_id),
-    path('api/v2/posts/<str:slug>/', get_update_or_delete_post_by_slug),
+    path('api/v1/posts/', get_or_create_posts),
+    path('api/v1/posts/<int:post_id>/', get_update_or_delete_post_by_id),
+    path('api/v1/posts/<str:slug>/', get_update_or_delete_post_by_slug),
 ]

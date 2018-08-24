@@ -1,3 +1,5 @@
+import json
+
 
 def get_post_attrs(post):
     return {
@@ -10,4 +12,7 @@ def get_post_attrs(post):
         "updated_at": post.updated_at,
         "published_date": post.published_date,
     }
+
+def serialize_data(body):
+    return json.loads(str(body, 'utf-8'))
 

@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from posts.helpers import get_post_attrs
+from posts.helpers import get_post_attrs, serialize_data
 from posts.models import Post
 
 
@@ -49,21 +49,21 @@ def get_update_or_delete_post(method, request_body, post):
         return JsonResponse(data, safe=False, status=200)
 
     elif method == 'PUT':
-        body = serialize_body(request_body)
+        body = serialize_data(request_body)
 
         for val in body:
             setattr(post, val, body[val])
 
         post.save()
-        return JsonResponse(data, safe=False, status=200)
+        return JsonResponse(get_post_attrs(post), safe=False, status=200)
 
     elif method == 'DELETE':
         post.delete()
-        return JsonResponse(data, safe=False, status=200)
+        return JsonResponse({}, safe=False, status=200)
 
 
 def create_post(request_body):
-    body = serialize_body(request_body)
+    body = serialize_data(request_body)
     Post.objects.create(**body)
     return JsonResponse({}, safe=False, status=201)
 
@@ -81,8 +81,3 @@ def get_posts():
             "objects": list(map(serialize_post, json.loads(serializers.serialize('json', posts))))
         }
     }, safe=False, status=200)
-
-
-def serialize_body(body):
-    return json.loads(str(body, 'utf-8'))
-
