@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from posts.models import PostResource
+from django.urls import path
+from posts.views import get_or_create_posts, get_update_or_delete_post_by_id, get_update_or_delete_post_by_slug, home
 
-post_resource = PostResource()
 
 urlpatterns = [
+    path('', home),
     path('admin/', admin.site.urls),
-    path('api/v1/', include(post_resource.urls)),
+    path('api/v2/posts/', get_or_create_posts),
+    path('api/v2/posts/<int:post_id>/', get_update_or_delete_post_by_id),
+    path('api/v2/posts/<str:slug>/', get_update_or_delete_post_by_slug),
 ]

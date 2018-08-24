@@ -1,18 +1,10 @@
 import random
-import uuid
 
 from django.db import models
-from django.conf.urls import url
 from django.db import IntegrityError
-
-from tastypie.resources import ModelResource
-from tastypie.authorization import Authorization
-
 
 # Create your models here.
 class Post(models.Model):
-
-    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     title = models.CharField(max_length=200, unique=True)
 
@@ -41,16 +33,3 @@ class Post(models.Model):
                 self.slug = self.slug + '-' + string_rand
                 self.title = self.title + '-' + string_rand
                 super(Post, self).save(*args, **kwargs)
-
-class PostResource(ModelResource):
-    class Meta:
-        queryset = Post.objects.all()
-        resource_name = 'posts'
-        authorization = Authorization()
-        detail_uri_name = 'id'
-
-    def prepend_urls(self):
-        return [
-            url(r"^(?P<posts>%s)/(?P<id>[\w\d_.-]+)/$" % self._meta.resource_name,
-                self.wrap_view('dispatch_detail'), name="api_dispatch_detail"),
-        ]
