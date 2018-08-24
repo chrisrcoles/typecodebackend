@@ -5,7 +5,7 @@ from django.test import Client
 from django.test import TestCase
 
 # Create your tests here.
-from posts.helpers import serialize_data
+from posts.helpers import serialize_data, get_post_attrs, create_post
 from posts.models import Post
 
 
@@ -19,8 +19,35 @@ class PostTestCase(TestCase):
             "published_date": datetime.now()
 
         }
+
         self.post1 = Post.objects.create(**POST1)
         self.CLIENT = Client(enforce_csrf_checks=False)
+
+    def test_get_post_attrs(self):
+        attrs = get_post_attrs(self.post1)
+
+        self.assertEqual(self.post1.id, attrs["id"])
+        self.assertEqual(self.post1.author, attrs["author"])
+        self.assertEqual(self.post1.title, attrs["title"])
+        self.assertEqual(self.post1.slug, attrs["slug"])
+        self.assertEqual(self.post1.body, attrs["body"])
+        self.assertEqual(self.post1.created_at,attrs["created_at"])
+        self.assertEqual(self.post1.updated_at, attrs["updated_at"])
+        self.assertEqual(self.post1.published_date, attrs["published_date"])
+
+
+    def test_serialize_data(self):
+        byte_string = b'{"message": "hello world"}'
+        serialized_string = serialize_data(byte_string)
+        self.assertEqual({"message": "hello world"}, serialized_string)
+
+
+    def test_create_post(self):
+        request_body = b'{ "title": "Post 2", "slug": "post-2", "author": "Willy Beem", "body": "Some words about post 2 go here" }'
+        response = create_post(request_body)
+
+        self.assertEqual(201, response.status_code)
+        self.assertEqual({}, serialize_data(response.content))
 
 
     def test_home(self):
@@ -78,6 +105,5 @@ class PostTestCase(TestCase):
         slug = self.post1.slug
         response = self.CLIENT.delete('/api/v1/posts/{}/'.format(slug))
         res = serialize_data(response.content)
-        print(res)
         self.assertEqual({}, res)
         self.assertEqual(200, response.status_code)

@@ -1,4 +1,3 @@
-
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -7,10 +6,11 @@ from posts.helpers import get_all_posts, create_post, get_update_or_delete_post
 from posts.models import Post
 
 
+# Create your views here.
 def home(request):
     return JsonResponse({"message": "Typecode API"}, status=200)
 
-# Create your views here.
+
 @csrf_exempt
 def get_or_create_posts(request):
     if request.method == 'GET':
