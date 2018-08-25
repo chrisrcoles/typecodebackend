@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from django.utils import timezone
 
 from django.test import Client
 from django.test import TestCase
@@ -16,13 +16,15 @@ class PostTestCase(TestCase):
             "slug": "post-title",
             "author": "John Doe",
             "body": "Some words go here",
-            "published_date": datetime.now()
+            "published_date": timezone.now()
 
         }
 
         self.post1 = Post.objects.create(**POST1)
         self.CLIENT = Client(enforce_csrf_checks=False)
 
+
+    # UnitTests for Endpoints
     def test_get_post_attrs(self):
         attrs = get_post_attrs(self.post1)
 
@@ -50,6 +52,7 @@ class PostTestCase(TestCase):
         self.assertEqual({}, serialize_data(response.content))
 
 
+    # Functional Tests for Endpoints
     def test_home(self):
         response = self.CLIENT.get('')
         data = serialize_data(response.content)
