@@ -24,7 +24,7 @@ class PostTestCase(TestCase):
         self.CLIENT = Client(enforce_csrf_checks=False)
 
 
-    # UnitTests for Endpoints
+    # UnitTests
     def test_get_post_attrs(self):
         attrs = get_post_attrs(self.post1)
 

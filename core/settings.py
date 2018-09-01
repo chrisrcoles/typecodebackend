@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     'www.typecode-api.com',
     'localhost',
     '127.0.0.1',
+    '192.168.0.2'
 ]
 
 
@@ -42,18 +43,28 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_nose',
+    'corsheaders',
     'posts',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+    '192.168.0.2:3000',
+    '127.0.0.1:3000',
+    '192.168.0.2:8081',
+)
 
 ROOT_URLCONF = 'core.urls'
 
