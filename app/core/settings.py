@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '192.168.0.2',
+    'http://typecodebackend-dev.us-east-1.elasticbeanstalk.com',
     'typecodebackend-dev.us-east-1.elasticbeanstalk.com'
 ]
 
