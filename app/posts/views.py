@@ -6,11 +6,6 @@ from .helpers import get_all_posts, create_post, get_update_or_delete_post
 from .models import Post
 
 
-# Create your views here.
-def home(request):
-    return JsonResponse({"message": "Typecode API"}, status=200)
-
-
 @csrf_exempt
 def get_or_create_posts(request):
     if request.method == 'GET':
