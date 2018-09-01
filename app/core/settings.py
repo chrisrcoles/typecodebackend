@@ -26,11 +26,10 @@ SECRET_KEY = '9sx4be$cz+=wp(!bufkrjw+rg60m379yenv3gb+lq$2=)^l$0n'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.typecode-api.com',
+    'typecode-api.com',
     'localhost',
     '127.0.0.1',
     '192.168.0.2',
-    # 'http://typecodebackend-dev.us-east-1.elasticbeanstalk.com',
     'typecodebackend-dev.us-east-1.elasticbeanstalk.com'
 ]
 
