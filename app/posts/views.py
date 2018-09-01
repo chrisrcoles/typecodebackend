@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .helpers import get_all_posts, create_post, get_update_or_delete_post
 
-from app.posts.models import Post
+from .models import Post
 
 
 # Create your views here.

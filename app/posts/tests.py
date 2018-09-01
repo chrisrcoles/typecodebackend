@@ -5,7 +5,7 @@ from django.test import TestCase
 from django.utils import timezone
 from .helpers import serialize_data, get_post_attrs, create_post
 
-from app.posts.models import Post
+from .models import Post
 
 
 class PostTestCase(TestCase):
