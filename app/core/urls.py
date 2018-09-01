@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from posts.views import get_or_create_posts, get_update_or_delete_post_by_id, get_update_or_delete_post_by_slug, home
 
+from app.posts.views import get_or_create_posts, get_update_or_delete_post_by_id, get_update_or_delete_post_by_slug, home
 
 urlpatterns = [
     path('', home),

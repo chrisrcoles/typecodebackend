@@ -3,7 +3,7 @@ import json
 from django.core import serializers
 from django.http import JsonResponse
 
-from posts.models import Post
+from app.posts.models import Post
 
 
 def get_post_attrs(post):

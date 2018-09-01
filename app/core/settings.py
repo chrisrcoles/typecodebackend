@@ -67,7 +67,7 @@ CORS_ORIGIN_WHITELIST = (
     '192.168.0.2:8081',
 )
 
-ROOT_URLCONF = 'core.urls'
+ROOT_URLCONF = 'app.core.urls'
 
 TEMPLATES = [
     {

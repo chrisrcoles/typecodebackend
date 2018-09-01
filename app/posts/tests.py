@@ -1,12 +1,11 @@
 import json
-from django.utils import timezone
 
 from django.test import Client
 from django.test import TestCase
+from django.utils import timezone
+from .helpers import serialize_data, get_post_attrs, create_post
 
-# Create your tests here.
-from posts.helpers import serialize_data, get_post_attrs, create_post
-from posts.models import Post
+from app.posts.models import Post
 
 
 class PostTestCase(TestCase):
