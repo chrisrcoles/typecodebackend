@@ -2,7 +2,6 @@
 
 [Exercise Outline](https://github.com/chrisrcoles/typecodebackend/blob/master/docs/development-exercise)
 
-[API Endpoint](http://typecodebackend-dev.us-east-1.elasticbeanstalk.com/)
 
 ## Application Architecture 
 
@@ -11,6 +10,8 @@ Built with [Python Django](https://www.djangoproject.com/)
 ## Deployment 
  
 Deployed on [AWS Elasticbeanstalk](https://aws.amazon.com/elasticbeanstalk/) 
+
+[API Endpoint](http://typecodebackend-dev.us-east-1.elasticbeanstalk.com/)
 
 ## Setting Up the Application 
 
