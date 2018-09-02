@@ -55,6 +55,14 @@ Deployed on [AWS Elasticbeanstalk](https://aws.amazon.com/elasticbeanstalk/)
 8. Start App
 
 - `$typecodebackend> ./app.manage.py runserver`
+
+### Testing
+
+All CI tests are ran on Circle CI. 
+
+To run tests, use the command: 
+
+- `$typecodebackend> ./app.manage.py test`
  
 ## API Spec
 
