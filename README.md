@@ -20,27 +20,28 @@ Deployed on [AWS Elasticbeanstalk](https://aws.amazon.com/elasticbeanstalk/)
 
 - Install [Homebrew](https://docs.brew.sh/Installation)
 
-- `$> brew install python3.6`
+`$> brew install python3.6`
 
-- `$> brew install postgres`
+`$> brew install postgres`
 
 3. Install pip, virtualenv
 
-- `$> sudo easy_install pip`
+`$> sudo easy_install pip`
 
-- `$> pip install virtualenv`
+`$> pip install virtualenv`
 
 4. Create and activate virtualenv
 
-- `$virtualenvs> virtualenv -p python3.6 typecode`
+`$virtualenvs> virtualenv -p python3.6 typecode`
 
-- `$virtualenvs> source typecode/bin/activate`
+`$virtualenvs> source typecode/bin/activate`
  
 5. Install app dependencies.
 
-- `$typecodebackend> pip install -r app/requirements.txt`
+`$typecodebackend> pip install -r app/requirements.txt`
 
 6. Create Postgres DB and Postgres User
+
 ```
    >$ psql template1
    >template1=# CREATE DATABASE typecode;
@@ -48,9 +49,11 @@ Deployed on [AWS Elasticbeanstalk](https://aws.amazon.com/elasticbeanstalk/)
 ```
 
 7. Migrate App
- `$typecodebackend> ./app.manage.py migrate`
+
+`$typecodebackend> ./app.manage.py migrate`
  
 8. Start App
+
 `$typecodebackend> ./app.manage.py runserver`
  
 ## API Spec
