@@ -1,8 +1,4 @@
-[![Build Status](https://circleci.com/gh/circleci/mongofinil.svg?&style=shield&circle-token=164758844dde09a6836d692607af15c997c93f28)](https://circleci.com/gh/circleci/mongofinil.svg?&style=shield&circle-token=164758844dde09a6836d692607af15c997c93f28)
-
-
-
-# Type/Code Development Exercise
+# Type/Code Development Exercise [![Build Status](https://circleci.com/gh/circleci/mongofinil.svg?&style=shield&circle-token=164758844dde09a6836d692607af15c997c93f28)](https://circleci.com/gh/circleci/mongofinil.svg?&style=shield&circle-token=164758844dde09a6836d692607af15c997c93f28)
 
 [Exercise Outline](https://github.com/chrisrcoles/typecodebackend/blob/master/)
 [API Endpoint](http://typecodebackend-dev.us-east-1.elasticbeanstalk.com/api/v1)
