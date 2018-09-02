@@ -1,12 +1,16 @@
 # Type/Code Development Exercise [![Build Status](https://circleci.com/gh/circleci/mongofinil.svg?&style=shield&circle-token=164758844dde09a6836d692607af15c997c93f28)](https://circleci.com/gh/circleci/mongofinil.svg?&style=shield&circle-token=164758844dde09a6836d692607af15c997c93f28)
 
-[Exercise Outline](https://github.com/chrisrcoles/typecodebackend/blob/master/)
+[Exercise Outline](https://github.com/chrisrcoles/typecodebackend/blob/master/docs/development-exercise)
 
 [API Endpoint](http://typecodebackend-dev.us-east-1.elasticbeanstalk.com/)
 
 ## Application Architecture 
 
-Built with [Python Django](https://www.djangoproject.com/) 
+Built with [Python Django](https://www.djangoproject.com/)
+ 
+## Deployment 
+ 
+Deployed on [AWS Elasticbeanstalk](https://aws.amazon.com/elasticbeanstalk/) 
 
 ## Setting Up the Application 
 
